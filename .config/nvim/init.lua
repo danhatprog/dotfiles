@@ -76,6 +76,15 @@ vim.pack.add({
     { src = "https://github.com/nvim-telescope/telescope.nvim",   branch = "0.1.x" },
     { src = "https://github.com/mattn/emmet-vim" },
     { src = "https://github.com/williamboman/mason.nvim" },
+    { src = "https://github.com/tamton-aquib/keys.nvim" },
+})
+
+-- [SCREEN KEYS]
+require("keys").setup({
+    enable_on_startup = true,
+    win_opts = {
+        width = 25
+    }
 })
 
 -- [LSP]
