@@ -1,0 +1,90 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 28,
+  "spacing": 2,
+  "margin-top": 4,
+  "margin-bottom": 0,
+  "margin-left": 4,
+  "margin-right": 4,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["backlight", "pulseaudio", "network", "battery", "clock"],
+
+  // Global style settings
+  "hyprland/workspaces": {
+    "format": "[{name}]",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "[1]",
+      "2": "[2]",
+      "3": "[3]",
+      "4": "[4]",
+      "5": "[5]",
+      "6": "[6]",
+      "7": "[7]",
+      "8": "[8]",
+      "9": "[9]",
+      "urgent": "[!]",
+      "active": "[*]",
+      "default": "[-]"
+    }
+  },
+
+  "hyprland/window": {  
+    "format": "$ {class}",
+    "max-length": 60,
+    "icon": false,
+    "icon-size": 13
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %B %d, %Y}",
+    "interval": 1
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "BATTERY:{capacity}%",
+    "format-charging": "CHG:{capacity}%",
+    "format-plugged": "AC:{capacity}%",
+    "format-alt": "{time}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "network": {
+    "format-wifi": "WI-FI:OK",
+    "format-ethernet": "ETHERNET:OK",
+    "format-disconnected": "WI-FI:--",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Disconnected"
+  },
+
+  "pulseaudio": {
+    "format": "VOLUME:{volume}%",
+    "format-bluetooth": "BLUETOOTH:{volume}%",
+    "format-muted": "VOLUME:MUTE",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    },
+    "scroll-step": 5,
+    "on-click": "pavucontrol"
+  },
+
+  "backlight": {
+    "format": "BRIGHTNESS:{percent}%",
+    "tooltip-format": "Brightness: {percent}%"
+  }
+}

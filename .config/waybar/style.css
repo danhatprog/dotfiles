@@ -1,0 +1,135 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "GoMono Nerd Font Mono", "Courier New", monospace;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+}
+
+/* Base styling for all modules */
+#workspaces,
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#backlight {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2px 2px;
+    margin: 1px 1px;
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: "GoMono Nerd Font Mono", "Courier New", monospace;
+    font-weight: bold;
+}
+
+/* Workspaces */
+#workspaces {
+    padding: 0;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#workspaces button {
+    padding: 2px 8px;
+    color: #808080;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 1px;
+    font-family: "GoMono Nerd Font Mono", "Courier New", monospace;
+    font-weight: bold;
+    transition: none;
+}
+
+#workspaces button.active {
+    color: #e0e0e0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#workspaces button.urgent {
+    color: #ff4141;
+    background: rgba(255, 65, 65, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Window title */
+#window {
+    margin-left: 4px;
+    color: #e0e0e0;
+    background: rgba(0, 0, 0, 0.85);
+    border-color: rgba(255, 255, 255, 0.1);
+    font-style: normal;
+}
+
+/* Clock with terminal-style formatting */
+#clock {
+    margin-right: 4px;
+    color: #e0e0e0;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: "GoMono Nerd Font Mono", monospace;
+    letter-spacing: 1px;
+}
+
+/* Battery with status colors */
+#battery {
+    color: #41ff00;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+#battery.warning {
+    color: #ffff00;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+#battery.critical {
+    color: #ff4141;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Network status */
+#network {
+    color: #00b4ff;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+#network.disconnected {
+    color: #ff4141;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Audio */
+#pulseaudio {
+    color: #ff00ff;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+#pulseaudio.muted {
+    color: #a0a0a0;
+    background-color: #303030;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Brightness */
+#backlight {
+    color: #ff7700;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Tooltip styling */
+tooltip {
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    color: #00ff41;
+    font-family: "GoMono Nerd Font Mono", monospace;
+    font-size: 10px;
+}

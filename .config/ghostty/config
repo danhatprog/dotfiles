@@ -1,0 +1,21 @@
+font-family = GoMono Nerd Font
+font-size = 17
+
+background = #060403
+cursor-color = #c0c0c0
+cursor-text = #000000
+
+custom-shader = ~/.config/ghostty/shaders/crt.glsl
+custom-shader-animation = true
+
+window-padding-x = 0
+window-padding-y = 0
+
+theme = GitHub-Dark-Default
+
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+window-decoration = none
+window-theme = system
