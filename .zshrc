@@ -22,9 +22,6 @@ alias vrc="cd ~/.config/nvim && nvim ."
 alias hrc="cd ~/.config/hypr && nvim ."
 alias logo="clear && fastfetch"
 
-eval "$(zoxide init zsh)"
-# alias cd="z"
-
 eval "$(fzf --zsh)"
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -40,5 +37,4 @@ DISABLE_AUTO_TITLE="true"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export XCURSOR_THEME="macos-cursors"
 export XCURSOR_SIZE=30
