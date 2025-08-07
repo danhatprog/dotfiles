@@ -42,8 +42,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)", sile
 vim.keymap.set("n", "<S-g>", "<S-g>zz", { desc = "Go to end of file (centered)", silent = true, noremap = true })
 
 -- quality of life
+vim.keymap.set("n", "Y", "yy", { desc = "Yank whole line", silent = true, noremap = true })
+vim.keymap.set("n", "D", "dd", { desc = "Delete whole line", silent = true, noremap = true })
 vim.keymap.set("i", "<C-BS>", "<C-w>", { desc = "Ctrl + backspace to delete whole word", silent = true })
-vim.keymap.set("n", "<S-y>", "yy", { desc = "Yank whole line", silent = true, noremap = true })
 vim.keymap.set("n", "<leader>o", ":update<CR>:source<CR>", { desc = "Source current file", noremap = true })
 vim.keymap.set("n", "<leader><S-d>", "godG", { desc = "Delete whole file", silent = true, noremap = true })
 vim.keymap.set({ "v", "n" }, "<leader>d", "\"_d", { desc = "Delete to void buffer", silent = true, noremap = true })
