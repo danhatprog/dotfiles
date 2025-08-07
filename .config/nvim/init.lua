@@ -1,6 +1,5 @@
 -- [SETTINGS]
 
--- lines/editor
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = false
@@ -49,6 +48,7 @@ vim.keymap.set("n", "<leader>o", ":update<CR>:source<CR>", { desc = "Source curr
 vim.keymap.set("n", "<leader><S-d>", "godG", { desc = "Delete whole file", silent = true, noremap = true })
 vim.keymap.set({ "v", "n" }, "<leader>d", "\"_d", { desc = "Delete to void buffer", silent = true, noremap = true })
 
+-- move cursor in insert mode
 vim.keymap.set("i", "<C-h>", "<C-o>h", { desc = "Move cursor left", silent = true, noremap = true })
 vim.keymap.set("i", "<C-j>", "<C-o>j", { desc = "Move cursor down", silent = true, noremap = true })
 vim.keymap.set("i", "<C-k>", "<C-o>k", { desc = "Move cursor up", silent = true, noremap = true })
@@ -84,9 +84,9 @@ vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format current f
 vim.g.rust_recommended_style = 0
 
 require("mason").setup()
-
 vim.keymap.set("n", "<leader>ma", ":Mason<CR>", { desc = "Open Mason panel", silent = true, noremap = true })
 
+-- [OIL]
 require("oil").setup({
     default_file_explorer = true,
     view_options = {
@@ -121,7 +121,6 @@ local mode_map = {
 local update_statusline = function()
     local mode = vim.api.nvim_get_mode().mode
     local current_mode = mode_map[mode] or { label = mode, color = '#d4d4d4' }
-
     -- Build statusline without string.format
     vim.opt.statusline = ""
         .. "%#StatusLineMode#" .. " " .. current_mode.label .. " " .. "%#StatusLine#"
@@ -136,10 +135,8 @@ vim.api.nvim_create_autocmd({ 'ModeChanged', 'BufEnter' }, {
     callback = update_statusline
 })
 
--- Initial call
 update_statusline()
 
--- Colors
 vim.cmd([[
   highlight StatusLine      guibg=NONE guifg=#c0c0c0 gui=bold
   highlight StatusLineNC    guibg=NONE guifg=#6e6a86
@@ -155,7 +152,7 @@ vim.cmd([[
   augroup END
 ]])
 
--- telescope setup
+-- [TELESCOPE]
 local tele = require("telescope")
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
@@ -183,7 +180,7 @@ vim.keymap.set("n", "<leader>ss", function()
     builtin.grep_string({ search = vim.fn.input("Grep -> ") })
 end)
 
--- treesitter setup
+-- [TREESITTER]
 local treesitter = require("nvim-treesitter.configs")
 
 treesitter.setup({
