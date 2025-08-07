@@ -11,7 +11,6 @@
   "modules-center": ["hyprland/window"],
   "modules-right": ["backlight", "pulseaudio", "network", "battery", "clock"],
 
-  // Global style settings
   "hyprland/workspaces": {
     "format": "[{name}]",
     "on-click": "activate",
@@ -37,8 +36,8 @@
     "icon": false,
     "icon-size": 13,
     "rewrite": {
-        "com.mitchellh.ghostty": "Ghostty",
-    },
+        "com.mitchellh.ghostty": "Ghostty"
+    }
   },
 
   "clock": {
