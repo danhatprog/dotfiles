@@ -9,7 +9,6 @@ vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = "yes"
 
-
 vim.opt.termguicolors = true
 vim.opt.winborder = "rounded"
 
@@ -48,6 +47,11 @@ vim.keymap.set("n", "<S-y>", "yy", { desc = "Yank whole line", silent = true, no
 vim.keymap.set("n", "<leader>o", ":update<CR>:source<CR>", { desc = "Source current file", noremap = true })
 vim.keymap.set("n", "<leader><S-d>", "godG", { desc = "Delete whole file", silent = true, noremap = true })
 vim.keymap.set({ "v", "n" }, "<leader>d", "\"_d", { desc = "Delete to void buffer", silent = true, noremap = true })
+
+vim.keymap.set("i", "<C-h>", "<C-o>h", { desc = "Move cursor left", silent = true, noremap = true })
+vim.keymap.set("i", "<C-j>", "<C-o>j", { desc = "Move cursor down", silent = true, noremap = true })
+vim.keymap.set("i", "<C-k>", "<C-o>k", { desc = "Move cursor up", silent = true, noremap = true })
+vim.keymap.set("i", "<C-l>", "<C-o>l", { desc = "Move cursor right", silent = true, noremap = true })
 
 -- functionality
 vim.keymap.set({ "v", "n" }, "<leader>y", "\"+y", { desc = "Copy to system clipboard", silent = true, noremap = true })
